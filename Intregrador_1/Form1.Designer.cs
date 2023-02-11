@@ -39,6 +39,7 @@
             this.btnModificarAuto = new System.Windows.Forms.Button();
             this.btnAgregarAuto = new System.Windows.Forms.Button();
             this.btnAsignar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutosPorPersona)).BeginInit();
@@ -50,23 +51,23 @@
             this.dgvPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonas.Location = new System.Drawing.Point(34, 52);
             this.dgvPersonas.Name = "dgvPersonas";
-            this.dgvPersonas.Size = new System.Drawing.Size(237, 150);
+            this.dgvPersonas.Size = new System.Drawing.Size(291, 150);
             this.dgvPersonas.TabIndex = 0;
             // 
             // dgvAutos
             // 
             this.dgvAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAutos.Location = new System.Drawing.Point(34, 275);
+            this.dgvAutos.Location = new System.Drawing.Point(505, 52);
             this.dgvAutos.Name = "dgvAutos";
-            this.dgvAutos.Size = new System.Drawing.Size(237, 150);
+            this.dgvAutos.Size = new System.Drawing.Size(291, 150);
             this.dgvAutos.TabIndex = 1;
             // 
             // dgvAutosPorPersona
             // 
             this.dgvAutosPorPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAutosPorPersona.Location = new System.Drawing.Point(505, 52);
+            this.dgvAutosPorPersona.Location = new System.Drawing.Point(34, 275);
             this.dgvAutosPorPersona.Name = "dgvAutosPorPersona";
-            this.dgvAutosPorPersona.Size = new System.Drawing.Size(237, 150);
+            this.dgvAutosPorPersona.Size = new System.Drawing.Size(291, 150);
             this.dgvAutosPorPersona.TabIndex = 2;
             // 
             // dgvDatosAutos
@@ -74,21 +75,22 @@
             this.dgvDatosAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatosAutos.Location = new System.Drawing.Point(505, 275);
             this.dgvDatosAutos.Name = "dgvDatosAutos";
-            this.dgvDatosAutos.Size = new System.Drawing.Size(237, 150);
+            this.dgvDatosAutos.Size = new System.Drawing.Size(291, 150);
             this.dgvDatosAutos.TabIndex = 3;
             // 
             // btnAgregarPersona
             // 
-            this.btnAgregarPersona.Location = new System.Drawing.Point(34, 214);
+            this.btnAgregarPersona.Location = new System.Drawing.Point(59, 214);
             this.btnAgregarPersona.Name = "btnAgregarPersona";
             this.btnAgregarPersona.Size = new System.Drawing.Size(75, 38);
             this.btnAgregarPersona.TabIndex = 4;
             this.btnAgregarPersona.Text = "Agregar persona";
             this.btnAgregarPersona.UseVisualStyleBackColor = true;
+            this.btnAgregarPersona.Click += new System.EventHandler(this.btnAgregarPersona_Click);
             // 
             // btnModificarPersona
             // 
-            this.btnModificarPersona.Location = new System.Drawing.Point(196, 214);
+            this.btnModificarPersona.Location = new System.Drawing.Point(221, 214);
             this.btnModificarPersona.Name = "btnModificarPersona";
             this.btnModificarPersona.Size = new System.Drawing.Size(75, 38);
             this.btnModificarPersona.TabIndex = 6;
@@ -97,25 +99,27 @@
             // 
             // btnBorrarPersona
             // 
-            this.btnBorrarPersona.Location = new System.Drawing.Point(115, 214);
+            this.btnBorrarPersona.Location = new System.Drawing.Point(140, 214);
             this.btnBorrarPersona.Name = "btnBorrarPersona";
             this.btnBorrarPersona.Size = new System.Drawing.Size(75, 38);
             this.btnBorrarPersona.TabIndex = 8;
             this.btnBorrarPersona.Text = "Borrar Persona";
             this.btnBorrarPersona.UseVisualStyleBackColor = true;
+            this.btnBorrarPersona.Click += new System.EventHandler(this.btnBorrarPersona_Click);
             // 
             // btnBorrarAuto
             // 
-            this.btnBorrarAuto.Location = new System.Drawing.Point(586, 214);
+            this.btnBorrarAuto.Location = new System.Drawing.Point(613, 214);
             this.btnBorrarAuto.Name = "btnBorrarAuto";
             this.btnBorrarAuto.Size = new System.Drawing.Size(75, 38);
             this.btnBorrarAuto.TabIndex = 11;
             this.btnBorrarAuto.Text = "Borrar auto";
             this.btnBorrarAuto.UseVisualStyleBackColor = true;
+            this.btnBorrarAuto.Click += new System.EventHandler(this.btnBorrarAuto_Click);
             // 
             // btnModificarAuto
             // 
-            this.btnModificarAuto.Location = new System.Drawing.Point(667, 214);
+            this.btnModificarAuto.Location = new System.Drawing.Point(694, 214);
             this.btnModificarAuto.Name = "btnModificarAuto";
             this.btnModificarAuto.Size = new System.Drawing.Size(75, 38);
             this.btnModificarAuto.TabIndex = 10;
@@ -124,27 +128,40 @@
             // 
             // btnAgregarAuto
             // 
-            this.btnAgregarAuto.Location = new System.Drawing.Point(505, 214);
+            this.btnAgregarAuto.Location = new System.Drawing.Point(532, 214);
             this.btnAgregarAuto.Name = "btnAgregarAuto";
             this.btnAgregarAuto.Size = new System.Drawing.Size(75, 38);
             this.btnAgregarAuto.TabIndex = 9;
             this.btnAgregarAuto.Text = "Agregar Auto";
             this.btnAgregarAuto.UseVisualStyleBackColor = true;
+            this.btnAgregarAuto.Click += new System.EventHandler(this.btnAgregarAuto_Click);
             // 
             // btnAsignar
             // 
-            this.btnAsignar.Location = new System.Drawing.Point(350, 118);
+            this.btnAsignar.Location = new System.Drawing.Point(373, 108);
             this.btnAsignar.Name = "btnAsignar";
             this.btnAsignar.Size = new System.Drawing.Size(79, 41);
             this.btnAsignar.TabIndex = 12;
             this.btnAsignar.Text = "Asignar";
             this.btnAsignar.UseVisualStyleBackColor = true;
+            this.btnAsignar.Click += new System.EventHandler(this.btnAsignar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(873, 427);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(72, 42);
+            this.btnSalir.TabIndex = 13;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // Integrador_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(951, 475);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAsignar);
             this.Controls.Add(this.btnBorrarAuto);
             this.Controls.Add(this.btnModificarAuto);
@@ -179,6 +196,7 @@
         private System.Windows.Forms.Button btnModificarAuto;
         private System.Windows.Forms.Button btnAgregarAuto;
         private System.Windows.Forms.Button btnAsignar;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
 
