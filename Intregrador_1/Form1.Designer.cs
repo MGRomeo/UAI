@@ -40,6 +40,8 @@
             this.btnAgregarAuto = new System.Windows.Forms.Button();
             this.btnAsignar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnGC = new System.Windows.Forms.Button();
+            this.btnEliminarAutoDeLista = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutosPorPersona)).BeginInit();
@@ -156,11 +158,32 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnGC
+            // 
+            this.btnGC.Location = new System.Drawing.Point(387, 349);
+            this.btnGC.Name = "btnGC";
+            this.btnGC.Size = new System.Drawing.Size(75, 60);
+            this.btnGC.TabIndex = 14;
+            this.btnGC.Text = "Ejecutar Garabge Collector";
+            this.btnGC.UseVisualStyleBackColor = true;
+            this.btnGC.Click += new System.EventHandler(this.btnGC_Click);
+            // 
+            // btnEliminarAutoDeLista
+            // 
+            this.btnEliminarAutoDeLista.Location = new System.Drawing.Point(256, 432);
+            this.btnEliminarAutoDeLista.Name = "btnEliminarAutoDeLista";
+            this.btnEliminarAutoDeLista.Size = new System.Drawing.Size(75, 61);
+            this.btnEliminarAutoDeLista.TabIndex = 15;
+            this.btnEliminarAutoDeLista.Text = "Eliminar auto de la lista";
+            this.btnEliminarAutoDeLista.UseVisualStyleBackColor = true;
+            // 
             // Integrador_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 475);
+            this.ClientSize = new System.Drawing.Size(951, 521);
+            this.Controls.Add(this.btnEliminarAutoDeLista);
+            this.Controls.Add(this.btnGC);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAsignar);
             this.Controls.Add(this.btnBorrarAuto);
@@ -197,6 +220,8 @@
         private System.Windows.Forms.Button btnAgregarAuto;
         private System.Windows.Forms.Button btnAsignar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnGC;
+        private System.Windows.Forms.Button btnEliminarAutoDeLista;
     }
 }
 

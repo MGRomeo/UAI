@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Intregrador_1
 {
@@ -22,8 +24,17 @@ namespace Intregrador_1
             TieneDuenio = pTieneDuenio;
         }
 
-
-        //Falta finalizador.Que cuando el objeto queda liberado muestre una leyenda indicando la
-        //Patente del Auto.
+        public bool TieneDueño(Auto pAuto)
+        {
+            if (pAuto.TieneDuenio == true) return true;
+            else return false;
+        }
+        ~Auto()
+        {
+            MessageBox.Show($"Se ejecuta DESTRUCTOR, se finaliza el ciclo de vida del Auto:{Environment.NewLine}" +
+                            $"Modelo: {Modelo}{Environment.NewLine}" +
+                            $"Marca {Marca},{Environment.NewLine}" +
+                            $"Patente: {Patente}","Atención",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+        }
     }
 }

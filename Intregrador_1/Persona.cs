@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Intregrador_1
 {
@@ -31,7 +32,22 @@ namespace Intregrador_1
             return Lista_de_Autos_por_persona;
         }
 
-       // Falta finalizador.Que cuando el objeto queda liberado muestre una leyenda indicando el
-       //DNI de la Persona.
+        public List<Auto> QuitarAuto(Auto pAuto)
+        {
+            Lista_de_Autos_por_persona.Remove(pAuto);
+            return Lista_de_Autos_por_persona;
+        }
+        public List<Auto> ListarAuto()
+        {
+            return Lista_de_Autos_por_persona;
+        }
+        ~Persona()
+        {
+            MessageBox.Show($"Se ejecuta DESTRUCTOR, se finaliza el ciclo de vida de la Persona:{Environment.NewLine}" +
+                            $"Nombre: {Nombre} {Apellido},{Environment.NewLine}" +
+                            $"DNI: {DNI}", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+
     }
 }

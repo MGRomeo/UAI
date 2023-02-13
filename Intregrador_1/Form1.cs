@@ -57,7 +57,16 @@ namespace Intregrador_1
             dgvAutos.DataSource = null;
             dgvAutos.DataSource = Lista_de_autos;
         }
-
+        private void btnDesasignar_Click(object sender, EventArgs e)
+        {
+            //Selecciono la persona desde su dgv y le aplico el metodo con el auto seleccionado de su dgv
+            dgvAutosPorPersona.DataSource = null;
+            dgvAutosPorPersona.DataSource = ((Persona)(dgvPersonas.SelectedRows[0].DataBoundItem)).QuitarAuto((Auto)(dgvAutos.SelectedRows[0].DataBoundItem));
+        }
+        private void btnGC_Click(object sender, EventArgs e)
+        {
+            GC.Collect();
+        }
 
         #endregion
 
