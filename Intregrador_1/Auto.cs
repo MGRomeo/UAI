@@ -8,27 +8,38 @@ using System.Windows.Forms;
 
 namespace Intregrador_1
 {
-    internal class Auto
+    public class Auto
     {
         public string Patente { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
-        public string Axo { get; set; }
+        public string Año { get; set; }
         public decimal Precio { get; set; }
         public Boolean TieneDuenio { get; set; }
-
+        public Persona Persona { get; set; }
 
         public Auto(string pPatente, string pMarca, string pModelo, string pAxo, decimal pPrecio, bool pTieneDuenio = false)
         {
-            Patente = pPatente; Marca = pMarca; Modelo = pModelo; Axo = pAxo; Precio = pPrecio;
+            Patente = pPatente; Marca = pMarca; Modelo = pModelo; Año = pAxo; Precio = pPrecio;
             TieneDuenio = pTieneDuenio;
         }
 
-        public bool TieneDueño(Auto pAuto)
+        public bool Dueño()
         {
-            if (pAuto.TieneDuenio == true) return true;
+            if (TieneDuenio == true)
+            {
+                MessageBox.Show("El auto ya posee dueño", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
             else return false;
         }
+
+        public void AsignarDueño(Persona persona)
+        {
+            TieneDuenio = true;
+            Persona = persona;
+        }
+
         ~Auto()
         {
             MessageBox.Show($"Se ejecuta DESTRUCTOR, se finaliza el ciclo de vida del Auto:{Environment.NewLine}" +

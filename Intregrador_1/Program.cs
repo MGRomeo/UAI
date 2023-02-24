@@ -11,12 +11,13 @@ namespace Intregrador_1
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
+        public static Integrador_1 integrador;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Integrador_1());
+            Application.Run(integrador = new Integrador_1());
         }
     }
 }

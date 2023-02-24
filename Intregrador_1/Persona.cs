@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Intregrador_1
 {
-    internal class Persona
+    public class Persona
     {
         public string DNI { get; set; }
         public string Nombre { get; set; }
@@ -19,7 +19,12 @@ namespace Intregrador_1
         //Retorna la cantidad de autos que posee la persona
         public int Cantidad_de_Autos()
         {
-            return 1;
+            int aux = 0;
+            foreach (var x in Lista_de_Autos_por_persona)
+            {
+                aux += 1;
+            }
+            return aux;
         }
         public Persona(string pDni, string pNombre, string pApellido)
         {
@@ -37,17 +42,18 @@ namespace Intregrador_1
             Lista_de_Autos_por_persona.Remove(pAuto);
             return Lista_de_Autos_por_persona;
         }
+
         public List<Auto> ListarAuto()
         {
-            return Lista_de_Autos_por_persona;
+            List<Auto> listaAux = Lista_de_Autos_por_persona;
+            return listaAux;
         }
+
         ~Persona()
         {
             MessageBox.Show($"Se ejecuta DESTRUCTOR, se finaliza el ciclo de vida de la Persona:{Environment.NewLine}" +
                             $"Nombre: {Nombre} {Apellido},{Environment.NewLine}" +
                             $"DNI: {DNI}", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
-
     }
 }
